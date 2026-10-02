@@ -1,4 +1,4 @@
-name: Maven Tests
+name: Maven Selenium Tests
 
 on:
   push:
@@ -17,5 +17,12 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: Run Maven Tests
-        run: mvn test
+      - name: Run HelloWorld Test
+        run: mvn -Dtest=HelloWorldTest test
+
+      - name: Upload Test Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: selenium-test-report
+          path: target/surefire-reports/
