@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -24,6 +25,10 @@ public class HelloWorldTest {
         driver.manage().window().maximize();
         System.out.println("Hello World");
 
+        String actualTitle = driver.getTitle();
+
+        // Intentionally wrong expected value
+        Assertions.assertEquals("Wrong Title", actualTitle);
 
         Thread.sleep(2000);
         driver.quit();
