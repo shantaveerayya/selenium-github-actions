@@ -23,12 +23,11 @@ public class HelloWorldTest {
         WebDriver driver = new ChromeDriver(options);
         driver.get("https://testautomationpractice.blogspot.com/");
         driver.manage().window().maximize();
-        System.out.println("Hello World");
 
         String actualTitle = driver.getTitle();
 
         // Intentionally wrong expected value
-        Assertions.assertEquals("Wrong Title", actualTitle);
+        Assertions.assertEquals("Automation Testing Practice", actualTitle);
 
         Thread.sleep(2000);
         driver.quit();
